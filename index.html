@@ -11,19 +11,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
     const cfg = {
-      apiKey:"AIzaSyC7iVtxb_TGJtjJp8FX1DRs-ESU-UQEc0M",
-      authDomain:"agente-ia-a4ec5.firebaseapp.com",
-      projectId:"agente-ia-a4ec5",
-      storageBucket:"agente-ia-a4ec5.firebasestorage.app",
-      messagingSenderId:"1025106952940",
-      appId:"1:1025106952940:web:29f85856c368433245dbc9"
+      apiKey:"AIzaSyAq8kWtjgTsCo396PEhdth8WEItBFi0pOM",
+      authDomain:"kapiro.firebaseapp.com",
+      projectId:"kapiro",
+      storageBucket:"kapiro.firebasestorage.app",
+      messagingSenderId:"261250743366",
+      appId:"1:261250743366:web:0c6dd0bb1b1ef923529e47"
     };
     const auth = getAuth(initializeApp(cfg));
     onAuthStateChanged(auth, user => {
-      if (!user) { window.location.replace("/login"); return; }
+      if (!user) { window.location.replace("login.html"); return; }
       const name  = user.displayName || localStorage.getItem("smi_user_name") || "Usuario";
       const photo = user.photoURL    || localStorage.getItem("smi_user_photo") || "";
       const email = user.email       || localStorage.getItem("smi_user_email") || "";
@@ -35,7 +35,7 @@
     window.__logout = async () => {
       await signOut(auth);
       ["smi_auth_token","smi_user_name","smi_user_email","smi_user_photo"].forEach(k => localStorage.removeItem(k));
-      window.location.replace("login.html");
+      window.location.replace("/login");
     };
   </script>
 </head>
