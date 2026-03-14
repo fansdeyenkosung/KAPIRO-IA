@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kapiro IA — Acceso</title>
   <link rel="icon" type="image/png" href="kapiro.png">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,7 +27,7 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Jost', sans-serif;
       background: var(--bg);
       color: var(--tx);
       min-height: 100vh;
@@ -47,6 +47,7 @@
         radial-gradient(ellipse 40% 40% at 50% 50%, rgba(13,8,16,1) 0%, transparent 100%);
     }
 
+    /* ── SOFT MESH ── */
     .bg-mesh {
       position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.5;
       background-image:
@@ -55,6 +56,7 @@
         radial-gradient(circle at 60% 20%, rgba(245,208,160,0.04) 0%, transparent 30%);
     }
 
+    /* ── FLOATING PETALS ── */
     .petals { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
     .petal {
       position: absolute;
@@ -69,6 +71,7 @@
       100% { opacity: 0; transform: translateY(105vh) rotate(var(--rot)) scale(0.5); }
     }
 
+    /* ── AURORA ── */
     .aurora {
       position: fixed; inset: 0; pointer-events: none; z-index: 0;
       background: linear-gradient(
@@ -106,6 +109,7 @@
       to   { opacity: 1; transform: none; }
     }
 
+    /* Decorative top line */
     .card-topline {
       position: absolute; top: 0; left: 50%; transform: translateX(-50%);
       width: 60%; height: 1px;
@@ -113,6 +117,7 @@
       border-radius: 1px;
     }
 
+    /* Soft corner ornaments */
     .orn {
       position: absolute;
       width: 28px; height: 28px;
@@ -138,6 +143,7 @@
       position: relative; width: 92px; height: 92px; margin-bottom: 18px;
     }
 
+    /* Outer soft glow rings */
     .logo-frame::before {
       content: '';
       position: absolute; inset: -12px; border-radius: 50%;
@@ -179,6 +185,7 @@
       display: flex; align-items: center; justify-content: center; font-size: 32px;
     }
 
+    /* Sparkle dot */
     .logo-spark {
       position: absolute; top: 2px; right: 5px; z-index: 3;
       font-size: 14px;
@@ -190,17 +197,17 @@
     }
 
     .brand-name {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 22px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
       background: linear-gradient(135deg, var(--rose) 0%, var(--violet) 50%, var(--gold) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 2px;
     }
     .brand-sub {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase;
       color: var(--txm); font-weight: 300;
     }
 
@@ -210,22 +217,21 @@
       animation: fadeUp 0.7s cubic-bezier(.16,1,.3,1) 0.28s both;
     }
     .headline h1 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 24px; font-weight: 300; font-style: italic;
-      color: var(--tx); line-height: 1.3; letter-spacing: -0.2px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 300; font-style: italic;
+      color: var(--tx); line-height: 1.3; letter-spacing: 0.5px;
     }
     .headline h1 em {
-      font-style: normal; font-weight: 700;
+      font-style: normal; font-weight: 600;
       background: linear-gradient(90deg, var(--rose), var(--violet));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .sub {
-      text-align: center; font-size: 11.5px; color: var(--txm);
+      text-align: center; font-size: 12px; color: var(--txm);
       line-height: 1.7; margin-bottom: 28px;
-      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 300;
-      letter-spacing: 0.5px;
+      font-family: 'DM Mono', monospace; font-weight: 300;
       animation: fadeUp 0.7s cubic-bezier(.16,1,.3,1) 0.34s both;
     }
     @keyframes fadeUp {
@@ -239,7 +245,6 @@
       background: rgba(255,107,138,0.07); border: 1px solid rgba(255,107,138,0.2);
       border-radius: 12px; padding: 10px 14px;
       color: var(--err); font-size: 12px; margin-bottom: 14px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
       animation: fadeUp 0.25s ease;
     }
     .err-box.show { display: flex; }
@@ -251,10 +256,10 @@
       background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,248,254,0.98));
       color: #1a0a20;
       border: none; border-radius: 16px;
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600;
+      font-family: 'Jost', sans-serif; font-size: 14.5px; font-weight: 500;
       cursor: pointer; position: relative; overflow: hidden;
       transition: transform .2s, box-shadow .2s;
-      letter-spacing: .3px;
+      letter-spacing: .5px;
       box-shadow: 0 4px 28px rgba(0,0,0,0.45), 0 0 0 1px rgba(240,168,200,0.15);
       animation: fadeUp 0.7s cubic-bezier(.16,1,.3,1) 0.4s both;
     }
@@ -290,9 +295,9 @@
       background: linear-gradient(90deg, transparent, var(--bd2), transparent);
     }
     .divider-label {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 9px; letter-spacing: 2.5px; color: var(--txm);
-      white-space: nowrap; font-weight: 400;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 2px; color: var(--txm);
+      white-space: nowrap;
     }
 
     /* ── BADGES ── */
@@ -305,10 +310,9 @@
       background: rgba(240,168,200,0.04);
       border: 1px solid var(--bd);
       border-radius: 10px; padding: 7px 13px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 10.5px; color: var(--txm); font-weight: 400;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; color: var(--txm); font-weight: 300;
       transition: all .2s;
-      letter-spacing: 0.2px;
     }
     .badge:hover {
       border-color: rgba(240,168,200,0.35);
@@ -326,13 +330,12 @@
     .foot {
       margin-top: 26px; text-align: center;
       font-size: 10.5px; color: var(--txm); line-height: 2;
-      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 300;
-      letter-spacing: 0.3px;
+      font-family: 'DM Mono', monospace; font-weight: 300;
       animation: fadeUp 0.7s cubic-bezier(.16,1,.3,1) 0.58s both;
     }
     .foot strong {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 11px; letter-spacing: 1.5px; font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px; letter-spacing: 2px; font-weight: 600;
       background: linear-gradient(90deg, var(--rose), var(--violet));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -350,14 +353,13 @@
     }
     @keyframes fadeDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:none} }
     .ribbon-brand {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px; font-weight: 600; letter-spacing: 2px;
       color: var(--txm); text-transform: uppercase;
     }
     .ribbon-status {
       display: flex; align-items: center; gap: 7px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 9px; color: var(--txm); font-weight: 400;
+      font-family: 'DM Mono', monospace; font-size: 9px; color: var(--txm);
     }
     .ribbon-dot {
       width: 5px; height: 5px; border-radius: 50%;
@@ -367,15 +369,16 @@
 
     @media (max-width: 440px) {
       .card { padding: 38px 26px 32px; border-radius: 26px; }
-      .headline h1 { font-size: 20px; }
+      .headline h1 { font-size: 22px; }
       .logo-img, .logo-fallback { width: 78px; height: 78px; }
       .logo-frame { width: 78px; height: 78px; }
-      .brand-name { font-size: 19px; }
+      .brand-name { font-size: 22px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top ribbon -->
   <div class="ribbon">
     <span class="ribbon-brand">Kapiro IA</span>
     <div class="ribbon-status">
@@ -384,14 +387,17 @@
     </div>
   </div>
 
+  <!-- Background -->
   <div class="bg-base"></div>
   <div class="bg-mesh"></div>
   <div class="aurora"></div>
   <div class="petals" id="petals"></div>
 
+  <!-- Card -->
   <div class="card">
     <div class="card-topline"></div>
 
+    <!-- Corner ornaments SVG -->
     <svg class="orn orn-tl" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2 14 C2 7 7 2 14 2" stroke="#f0a8c8" stroke-width="1.5" fill="none"/>
       <circle cx="2" cy="2" r="1.5" fill="#f0a8c8"/>
@@ -413,21 +419,25 @@
       <circle cx="14" cy="2" r="1" fill="#c084fc"/>
     </svg>
 
+    <!-- Logo -->
     <div class="logo-wrap">
       <div class="logo-frame">
         <img class="logo-img" src="kapiro.png" alt="Kapiro IA"
           onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';"/>
-        <div class="logo-fallback" id="logoFallback" style="display:none;">⚡</div>
+        <div class="logo-fallback" id="logoFallback" style="display:none;">✨</div>
         <div class="logo-spark">✦</div>
       </div>
       <div class="brand-name">Kapiro IA</div>
+      <div class="brand-sub">Asistente de inteligencia artificial</div>
     </div>
 
+    <!-- Headline -->
     <div class="headline">
       <h1>Bienvenida, <em>querida.</em></h1>
     </div>
     <p class="sub">inicia sesión para continuar</p>
 
+    <!-- Error -->
     <div class="err-box" id="errBox">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
@@ -435,6 +445,7 @@
       <span id="errMsg">Error al iniciar sesión.</span>
     </div>
 
+    <!-- Google button -->
     <button class="btn-g" id="btnG" onclick="loginGoogle()">
       <svg class="g-ic" width="20" height="20" viewBox="0 0 48 48">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
@@ -446,22 +457,26 @@
       <div class="spinner"></div>
     </button>
 
+    <!-- Divider -->
     <div class="divider">
       <div class="divider-label">✦ acceso seguro ✦</div>
     </div>
 
+    <!-- Badges -->
     <div class="badges">
       <div class="badge"><div class="badge-dot dot-rose"></div>Cuentas autorizadas</div>
       <div class="badge"><div class="badge-dot dot-violet"></div>Firebase · Seguro</div>
     </div>
 
+    <!-- Footer -->
     <div class="foot">
-      © Kapiro.pé<br/>
+      © Yenko Huanaquiri Calderón<br/>
       <strong>Kapiro IA</strong>
     </div>
   </div>
 
   <script>
+    // Floating petals
     const petalContainer = document.getElementById('petals');
     const colors = ['#f0a8c8','#c084fc','#f5d0a0','#e879a8','#d8b4fe'];
     for (let i = 0; i < 22; i++) {
@@ -470,32 +485,48 @@
       const color = colors[Math.floor(Math.random() * colors.length)];
       const size = 4 + Math.random() * 7;
       const rot = (Math.random() > 0.5 ? '' : '-') + (180 + Math.random() * 360) + 'deg';
-      el.style.cssText = `left:${Math.random()*100}%;top:-20px;--dur:${8+Math.random()*14}s;--delay:-${Math.random()*16}s;--rot:${rot};`;
-      el.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 10 10" fill="${color}" opacity="${0.4+Math.random()*0.4}"><ellipse cx="5" cy="5" rx="3" ry="5" transform="rotate(${Math.random()*360} 5 5)"/></svg>`;
+      el.style.cssText = `
+        left: ${Math.random() * 100}%;
+        top: -20px;
+        --dur: ${8 + Math.random() * 14}s;
+        --delay: -${Math.random() * 16}s;
+        --rot: ${rot};
+      `;
+      el.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 10 10" fill="${color}" opacity="${0.4 + Math.random()*0.4}">
+        <ellipse cx="5" cy="5" rx="3" ry="5" transform="rotate(${Math.random()*360} 5 5)"/>
+      </svg>`;
       petalContainer.appendChild(el);
     }
+
+    // Extra sparkle dots
     for (let i = 0; i < 18; i++) {
       const el = document.createElement('div');
       el.className = 'petal';
       const color = colors[Math.floor(Math.random() * colors.length)];
       const size = 2 + Math.random() * 3;
-      el.style.cssText = `left:${Math.random()*100}%;top:-10px;--dur:${6+Math.random()*10}s;--delay:-${Math.random()*12}s;--rot:${Math.random()*360}deg;`;
-      el.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="${color}" opacity="${0.5+Math.random()*0.4}"/></svg>`;
+      el.style.cssText = `
+        left: ${Math.random() * 100}%;
+        top: -10px;
+        --dur: ${6 + Math.random() * 10}s;
+        --delay: -${Math.random() * 12}s;
+        --rot: ${Math.random() * 360}deg;
+      `;
+      el.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="${color}" opacity="${0.5 + Math.random()*0.4}"/></svg>`;
       petalContainer.appendChild(el);
     }
   </script>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
     const auth = getAuth(initializeApp({
-      apiKey: "AIzaSyC7iVtxb_TGJtjJp8FX1DRs-ESU-UQEc0M",
-      authDomain: "agente-ia-a4ec5.firebaseapp.com",
-      projectId: "agente-ia-a4ec5",
-      storageBucket: "agente-ia-a4ec5.firebasestorage.app",
-      messagingSenderId: "1025106952940",
-      appId: "1:1025106952940:web:29f85856c368433245dbc9"
+      apiKey: "AIzaSyAq8kWtjgTsCo396PEhdth8WEItBFi0pOM",
+      authDomain: "kapiro.firebaseapp.com",
+      projectId: "kapiro",
+      storageBucket: "kapiro.firebasestorage.app",
+      messagingSenderId: "261250743366",
+      appId: "1:261250743366:web:0c6dd0bb1b1ef923529e47"
     }));
     const provider = new GoogleAuthProvider();
 
@@ -511,7 +542,7 @@
         localStorage.setItem("smi_user_name",  u.displayName || "Usuario");
         localStorage.setItem("smi_user_email", u.email || "");
         localStorage.setItem("smi_user_photo", u.photoURL || "");
-        window.location.href = "/";  // ✅ sin .html
+        window.location.href = "index.html";
       } catch(e) {
         btn.classList.remove('loading');
         const msg = document.getElementById('errMsg');
@@ -522,8 +553,7 @@
       }
     };
 
-    // Si ya está logueado, ir directo al chat
-    onAuthStateChanged(auth, u => { if (u) window.location.href = "/"; });  // ✅ sin .html
+    onAuthStateChanged(auth, u => { if (u) window.location.href = "index.html"; });
   </script>
 </body>
 </html>
