@@ -218,10 +218,9 @@
           </button>
         </div>
       </div>
-      <!-- Desktop: archivos + imágenes -->
-      <input type="file" id="fileInput" multiple accept=".html,.htm,.tsx,.ts,.js,.jsx,.css,.json,.md,.txt,.pdf,.sql,.doc,.docx,.xml,.csv,.py,.php,.java,.cpp,.c,.go,.rs,.vue,.svelte,.yaml,.yml,.env,.sh,.bat,.png,.jpg,.jpeg,.gif,.webp">
-      <!-- ✅ FIX 3: Móvil: solo imágenes -->
-      <input type="file" id="imageInput" multiple accept="image/*">
+      <!-- inputs ocultos — se activan por JS -->
+      <input type="file" id="fileInput" multiple accept=".html,.htm,.tsx,.ts,.js,.jsx,.css,.json,.md,.txt,.pdf,.sql,.doc,.docx,.xml,.csv,.py,.php,.java,.cpp,.c,.go,.rs,.vue,.svelte,.yaml,.yml,.env,.sh,.bat,.png,.jpg,.jpeg,.gif,.webp" style="display:none">
+      <input type="file" id="imageInput" multiple accept="image/*" style="display:none">
       <div class="input-foot">Kapiro IA puede cometer errores. Verifica información importante.</div>
     </div>
   </div>
@@ -391,12 +390,7 @@ function showWelcome(){
       <p class="w-sub">Soy <strong>Kapiro IA</strong>. ¿En qué puedo ayudarte hoy?<br>
         <span style="font-size:.76rem;opacity:.55">Adjunta archivos 📎, pega imágenes con Ctrl+V o pide archivos descargables.</span>
       </p>
-      <div class="w-chips">
-        <div class="w-chip" onclick="chipSend('Ayúdame a redactar un mensaje')">💌 Redactar un mensaje</div>
-        <div class="w-chip" onclick="chipSend('Dame ideas creativas')">🌸 Ideas creativas</div>
-        <div class="w-chip" onclick="chipSend('Ayúdame a resolver este ejercicio')">📐 Ejercicios</div>
-        <div class="w-chip" onclick="chipSend('Explícame un tema de literatura')">📖 Literatura</div>
-      </div>
+
     </div>`;
   renderSB();
 }
